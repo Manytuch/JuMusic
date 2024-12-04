@@ -1,0 +1,19 @@
+<!-- music_recommendation/templates/music_recommendation/recommendations.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Recommendations</title>
+</head>
+<body>
+    <h1>Music Recommendations for {{ recommendations.0.country }}</h1>
+    <ul>
+        {% for recommendation in recommendations %}
+            <li>
+                <strong>{{ recommendation.song_title }}</strong> by {{ recommendation.artist }} ({{ recommendation.genre }})
+                <br>
+                <a href="{{ recommendation.youtube_link }}" target="_blank">Watch on YouTube</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

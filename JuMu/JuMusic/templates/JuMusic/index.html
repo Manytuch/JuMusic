@@ -1,0 +1,24 @@
+<!-- music_recommendation/templates/music_recommendation/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Recommendation</title>
+</head>
+<body>
+    <h1>Welcome to Music Recommendation App</h1>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+    <form action="{% url 'recommend_music' %}" method="post">
+        {% csrf_token %}
+        <label for="country">Select your country:</label>
+        <select name="country" id="country">
+            <option value="India">India</option>
+            <option value="Liberia">Liberia</option>
+            <option value="Somalia">Somalia</option>
+            <option value="South Sudan">South Sudan</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
